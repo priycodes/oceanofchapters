@@ -67,7 +67,7 @@ app.post("/cart/add/:id", async(req, res) => {
     }
 
     await cart.save();
-    res.redirect("/cart");
+    res.redirect("/books");
 });
 
 //Clear Cart

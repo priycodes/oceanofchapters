@@ -14,7 +14,7 @@
             <% cart.items.forEach(item => { %>
                 <li>
                     <%= item.book.title %>
-                    &#8377;<%= item.book.price %>
+                    - &#8377;<%= new Intl.NumberFormat("en-IN").format(item.book.price) %>   
                     (Qty: <%= item.quantity %>)
                 </li>
           <% }) %>
@@ -25,7 +25,7 @@
           total += item.book.price * item.quantity;
           });
         %>
-        <h3>Total Price: &#8377;<%= total %></h3>
+        <h3>Total Price: &#8377;<%=  new Intl.NumberFormat("en-IN").format(total) %></h3>
     <% } %>  
     <form action="/cart/clear" method="POST">
         <button type="submit">Clear Cart</button>
