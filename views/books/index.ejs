@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanOfChapters</title>
+</head>
+<body>
+    <h2>All Books</h2>
+    <ul>
+        <% for(let book of allBooks) { %>
+            <li><a href="/books/<%= book._id %>"><%= book.title %></a></li>
+        <% } %>    
+    </ul>
+</body>
+</html>
