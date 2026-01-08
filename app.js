@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 const path = require("path");
-const Cart = require("./models/cart.js");
+const session = require("express-session");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
 
@@ -23,6 +25,20 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+}));
+
+app.use((req, res, next) => {
+  if (!req.session.cart) {
+    req.session.cart = { items: [] };
+  }
+  next();
+});
+
+
 app.get("/", (req, res) => {
     res.send("Hi, I am root");
 });
@@ -41,38 +57,81 @@ app.get("/books/:id", async (req, res) => {
 });
 
 //Cart Route
-app.get("/cart", async(req, res) => {
-    const cart = await Cart.findOne().populate("items.book");
-    res.render("cart/index", { cart });
+app.get("/cart", async (req, res) => {
+  const cart = req.session.cart;
+
+  // populate books manually
+  for (let item of cart.items) {
+    item.book = await Book.findById(item.book);
+  }
+
+  res.render("cart/index", { cart });
 });
 
 //Add Cart Route
-app.post("/cart/add/:id", async(req, res) => {
-    const bookId = req.params.id;
+app.post("/cart/add/:id", async (req, res) => {
+  const bookId = req.params.id;
+  const cart = req.session.cart;
 
-    let cart = await Cart.findOne({});
+  const existingItem = cart.items.find(
+    item => item.book.toString() === bookId
+  );
 
-    if (!cart) {
-        cart = new Cart({ items: [] });
-    }
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.items.push({ book: bookId, quantity: 1 });
+  }
 
-    const existingItem = cart.items.find(
-        item => item.book.toString() === bookId
-    );
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.items.push({ book: bookId, quantity: 1 });
-    }
-
-    await cart.save();
-    res.redirect("/books");
+  req.session.cart = cart;
+  res.redirect("/books");
 });
 
+
 //Clear Cart
-app.post("/cart/clear", async (req, res) => {
-  await Cart.deleteMany({});
+app.post("/cart/clear", (req, res) => {
+  req.session.cart = { items: [] };
+  res.redirect("/cart");
+});
+
+
+//increase quantity
+app.post("/cart/increase/:id", async (req, res) => {
+  const bookId = req.params.id;
+  const cart = req.session.cart;
+
+  const item = cart.items.find(i => i.book._id.toString() === bookId);
+  if (item) item.quantity++;
+
+  req.session.cart = cart;
+  res.redirect("/cart");
+});
+
+// decrease quantity
+app.post("/cart/decrease/:id", async (req, res) => {
+  const bookId = req.params.id;
+  const cart = req.session.cart;
+
+  const item = cart.items.find(i => i.book._id.toString() === bookId);
+  if (item) {
+    item.quantity--;
+    if (item.quantity <= 0) {
+      cart.items = cart.items.filter(i => i.book._id.toString() !== bookId);
+    }
+  }
+
+  req.session.cart = cart;
+  res.redirect("/cart");
+});
+
+// remove item
+app.post("/cart/remove/:id", async (req, res) => {
+  const bookId = req.params.id;
+  const cart = req.session.cart;
+
+  cart.items = cart.items.filter(i => i.book._id.toString() !== bookId);
+  req.session.cart = cart;
+
   res.redirect("/cart");
 });
 

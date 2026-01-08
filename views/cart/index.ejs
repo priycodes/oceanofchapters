@@ -16,6 +16,16 @@
                     <%= item.book.title %>
                     - &#8377;<%= new Intl.NumberFormat("en-IN").format(item.book.price) %>   
                     (Qty: <%= item.quantity %>)
+
+                    <form action="/cart/increase/<%= item.book._id %>" method="POST" style="display:inline;">
+                        <button>+</button>
+                    </form>
+                    <form action="/cart/decrease/<%= item.book._id %>" method="POST" style="display:inline;">
+                        <button>-</button>
+                    </form>
+                    <form action="/cart/remove/<%= item.book._id %>" method="POST" style="display:inline;">
+                        <button>Remove</button>
+                    </form>
                 </li>
           <% }) %>
         </ul>
