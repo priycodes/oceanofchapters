@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 const path = require("path");
+const Cart = require("./models/cart.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
 
@@ -38,6 +39,43 @@ app.get("/books/:id", async (req, res) => {
     const book = await Book.findById(id);
     res.render("books/show.ejs", { book });
 });
+
+//Cart Route
+app.get("/cart", async(req, res) => {
+    const cart = await Cart.findOne().populate("items.book");
+    res.render("cart/index", { cart });
+});
+
+//Add Cart Route
+app.post("/cart/add/:id", async(req, res) => {
+    const bookId = req.params.id;
+
+    let cart = await Cart.findOne({});
+
+    if (!cart) {
+        cart = new Cart({ items: [] });
+    }
+
+    const existingItem = cart.items.find(
+        item => item.book.toString() === bookId
+    );
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.items.push({ book: bookId, quantity: 1 });
+    }
+
+    await cart.save();
+    res.redirect("/cart");
+});
+
+//Clear Cart
+app.post("/cart/clear", async (req, res) => {
+  await Cart.deleteMany({});
+  res.redirect("/cart");
+});
+
 
 app.get("/testBook", async(req, res) => {
     let sampleBook = new Book({

@@ -20,6 +20,9 @@
         <li>Country: <%= book.country %></li>
         <li>Genre: <%= book.genre %></li>
         <li>Pages: <%= book.pages %></li>
+        <form action="/cart/add/<%= book._id %>" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
     </ul>
 </body>
 </html>
