@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 const path = require("path");
 const session = require("express-session");
+const ejsMate = require("ejs-mate");
+app.use(express.static(path.join(__dirname, "/public")));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
 
@@ -24,6 +26,7 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
+app.engine("ejs", ejsMate);
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
