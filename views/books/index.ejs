@@ -1,12 +1,21 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
     <h2>All Books</h2>
-        <!-- <form action="/cart">
-            <button>Your Cart</button>
-        </form> -->
-    <ul>
+    <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-1">
         <% for(let book of allBooks) { %>
-            <li><a href="/books/<%= book._id %>"><%= book.title %></a></li>
-        <% } %>    
-    </ul>
+            <a href="/books/<%= book._id %>" class="book-link">
+        <div class="card" style="width: 14rem;">
+            <img src="<%= book.image %>" class="card-img-top" 
+                 alt="book_image" style="height: 18rem;">
+                 <div class="card-img-overlay"></div>
+            <div class="card-body">
+                <p class="card-text">
+                    <b><%= book.title %></b> <br>
+                    &#8377;<%= book.price.toLocaleString("en-IN") %>
+                </p>
+            </div>
+        </div>
+        </a>
+        <% } %>
+    </div>
 </body>

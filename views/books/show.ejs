@@ -1,21 +1,59 @@
 <% layout("/layouts/boilerplate") -%>
-<body>
-    <h2>Book Details :</h2>
-    <ul>
-        <li><%= book.title %></li>
-        <li>Author: <%= book.author %></li>
-        <li><%= book.description %></li>
-        <li>Price: &#8377;<%= book.price %></li>
-        <li>Release Date: <%= book.releasedate.toLocaleDateString("en-IN", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-        }) %></li>
-        <li>Country: <%= book.country %></li>
-        <li>Genre: <%= book.genre %></li>
-        <li>Pages: <%= book.pages %></li>
-        <form action="/cart/add/<%= book._id %>" method="POST">
-            <button type="submit">Add to Cart</button>
-        </form>
-    </ul>
-</body>
+
+<div class="container my-5">
+    <!-- Image Section -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-4 text-center">
+            <img src="<%= book.image %>" class="img-fluid book-hero-img" alt="book image">
+        </div>
+        <!-- Book Info -->
+         <div class="col-md-8">
+            <h1 class="mb-2"><%= book.title %></h1>
+            <h5 class="text-muted mb-3">by <%= book.author %></h5>
+            <h4 class="text-success mb-3">
+                &#8377;<%= book.price.toLocaleString("en-IN") %>
+            </h4>
+            <p class="book-description mb-4">
+                <%= book.description %>
+            </p>
+            <form action="/cart/add/<%= book._id %>" method="POST">
+                <button class="btn btn-lg btn-primary px-5">
+                    Add to Cart
+                </button>
+            </form>
+         </div>
+    </div>
+    <!-- Details Section -->
+     <div class="row mb-5">
+        <div class="col ms-5">
+            <h4>Book Details</h4>
+            <ul class="list-unstyled book-meta">
+                <li><strong>Genre:</strong><%= book.genre %></li>
+                <li><strong>Pages:</strong> <%= book.pages %></li>
+                <li><strong>Country:</strong> <%= book.country %></li>
+                <li><strong>Release Date:</strong>
+                <%= book.releasedate.toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }) %>
+                </li>
+            </ul>
+        </div>
+     </div>
+     <!-- Author Section -->
+      <div class="row align-items-center author-section">
+        <div class="col-md-2 text-center">
+        <img src="<%= book.authorImage %>"
+           class="author-img"
+           alt="author">
+    </div>
+    <div class="col-md-10">
+      <h5><%= book.author %></h5>
+      <p class="text-muted">
+      </p>
+    </div>
+</div>
+</div>
+
+    

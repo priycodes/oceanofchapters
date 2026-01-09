@@ -7,6 +7,10 @@ const bookSchema = new Schema({
         required: true,
     },
     author: String,
+    authorImage: {
+    type: String,
+    default: "https://i.pinimg.com/736x/8a/f5/75/8af575926cd462281e58589821ddf6c9.jpg"
+    },
     description: String,
     image: {
         type: String,
