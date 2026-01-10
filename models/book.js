@@ -11,6 +11,10 @@ const bookSchema = new Schema({
     type: String,
     default: "https://i.pinimg.com/736x/8a/f5/75/8af575926cd462281e58589821ddf6c9.jpg"
     },
+    authorBio: {
+    type: String,
+    default: ""
+    },
     description: String,
     image: {
         type: String,

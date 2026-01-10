@@ -2,6 +2,8 @@ const sampleBooks = [
   {
     title: "My Fault",
     author: "Mercedes ron",
+    authorImage: "https://i.pinimg.com/736x/8f/33/84/8f3384e5428c7264f88aa3571f0f2247.jpg",
+    authorBio: "Mercedes Ron López is an Argentine-born Spanish author. She is known for the Culpables Saga, a trilogy that became known through Wattpad. The first book of the trilogy, Culpa Mía, was adapted into a movie in 2023. The sequel, Culpa Tuya, was adapted into a movie and released on December 27, 2024.",
     description:"My Fault (Culpable #1) by Mercedes Ron is a popular YA romance about 17-year-old Noah, whose life is upended when her mom marries a billionaire, forcing them to move to L.A. and live with her new, arrogant, bad-boy stepbrother, Nick, leading to a fiery enemies-to-lovers story filled with forbidden attraction, illegal street racing, secrets, and trauma. It's known for its angst, drama, and themes of love, danger, and healing, becoming a viral sensation on BookTok and Wattpad. ",
     image: "https://i.pinimg.com/736x/dc/5b/c1/dc5bc1d71e8380b2319c2b5ad5a99989.jpg",
     price: 399,
@@ -13,6 +15,8 @@ const sampleBooks = [
   {
     title: "Does It Hurt?",
     author: "H. D. Carlton",
+    authorImage: "https://i.pinimg.com/736x/92/d8/3e/92d83e61dc4d2d34022370e101431fba.jpg",
+    authorBio: "H.D. Carlton is a New York Times bestselling author known for writing dark romance, psychological thrillers, and suspense novels, famous for popular books like Haunting Adeline and Hunting Adeline, which feature obsessive, morally grey characters, intense plots, and explicit themes of stalking, violence, and complex power dynamics, often explored through the popular Cat & Mouse series, gaining significant traction on platforms like BookTok.",
     description:"A dark, emotional romance where a girl who has lost everything is drawn into a dangerous, obsessive relationship with a mysterious man who both protects and torments her while they struggle to survive after being stranded together.",
     image: "https://i.pinimg.com/736x/15/2a/5f/152a5f0631b392a9ca798b578ec7927d.jpg",
     price: 499,
@@ -24,6 +28,8 @@ const sampleBooks = [
   {
     title: "It ends with us",
     author: "Collen Hoover",
+    authorImage: "https://i.pinimg.com/1200x/41/97/77/419777c1940bb91693d943bc8089e479.jpg",
+    authorBio: "Colleen Hoover is a #1 New York Times bestselling American author known for popular contemporary romance and young adult novels, famous for self-publishing hits like It Ends with Us and Verity, achieving massive success via social media (especially #BookTok), and earning a spot on Time's 100 Most Influential People list in 2023, all while living in Texas with her family.",
     description:"It Ends with Us follows Lily Bloom, who starts a flower shop in Boston, meets charismatic neurosurgeon Ryle Kincaid, and falls for him, but their intense romance turns abusive as Ryle's anger surfaces, intensified by the reappearance of Lily's first love, Atlas Corrigan; pregnant and realizing she's repeating her mother's cycle of abuse, Lily chooses to leave Ryle, ending the violence for her daughter and eventually reconnecting with Atlas, ready for a new beginning.",
     image: "https://i.pinimg.com/736x/2b/67/60/2b6760353435b8ef1a3437385a381039.jpg",
     price: 299,
@@ -35,6 +41,8 @@ const sampleBooks = [
   {
     title: "It Starts With Us",
     author: "Colleen Hoover",
+    authorImage: "https://i.pinimg.com/1200x/41/97/77/419777c1940bb91693d943bc8089e479.jpg",
+    authorBio: "Colleen Hoover is a #1 New York Times bestselling American author known for popular contemporary romance and young adult novels, famous for self-publishing hits like It Ends with Us and Verity, achieving massive success via social media (especially #BookTok), and earning a spot on Time's 100 Most Influential People list in 2023, all while living in Texas with her family.",
     description: "A deeply emotional romance that continues the story from It Ends With Us, focusing on Lily and her first love Atlas as they navigate co-parenting, rekindle their connection, and face past wounds while finding hope and second chances together.",
     image: "https://i.pinimg.com/736x/37/35/8d/37358dff161c09e09b7ee7b6d86e180b.jpg", 
     price: 499,
@@ -46,6 +54,8 @@ const sampleBooks = [
   {
     title: "The Love Hypothesis",
     author: "Ali Hazelwood",
+    authorImage: "https://i.pinimg.com/736x/fe/0d/fc/fe0dfcea822e90f0e52d696d8f28a675.jpg",
+    authorBio: "Ali Hazelwood is a #1 New York Times bestselling Italian-American romance author known for witty, STEM-focused romantic comedies featuring women in academia and science, blending her PhD in neuroscience with tropes like enemies-to-lovers, with popular books including The Love Hypothesis and Love, Theoretically, often featuring strong female leads and spice",
     description: "A witty, heartfelt romance about a PhD student who pretends to date a grumpy professor to convince her best friend she’s over her ex, only to discover that their fake relationship might be real.",
     image: "https://i.pinimg.com/1200x/ae/aa/53/aeaa53b995d12762324bafb27912a964.jpg",
     price: 249,
@@ -57,6 +67,8 @@ const sampleBooks = [
   {
     title: "One of Us Is Lying",
     author: "Karen M. McManus",
+    authorImage: "https://i.pinimg.com/1200x/64/aa/da/64aada2f61d62c2be6216080507b6e62.jpg",
+    authorBio: "Karen M. McManus is a #1 New York Times bestselling American author known for gripping young adult (YA) mystery and thriller novels, often called the queen of the genre, famous for her breakout hit One of Us Is Lying, its sequels, and standalone books like The Cousins, all featuring intricate plots, distinctive characters, and themes inspired by films like The Breakfast Club and Ferris Bueller's Day Off.",
     description: "A gripping YA mystery where five students walk into detention and only four come out alive, leaving secrets, lies, and a shocking investigation that keeps readers guessing.",
     image: "https://i.pinimg.com/736x/6f/51/73/6f5173b7234c3d038d06e849f7b46ebe.jpg", 
     price: 450,
@@ -68,6 +80,8 @@ const sampleBooks = [
   {
     title: "Paper Towns",
     author: "John Green",
+    authorImage: "https://i.pinimg.com/1200x/e4/e0/5a/e4e05ac24c0d06d1dcd607e1e00aba3f.jpg",
+    authorBio: "John Green is a celebrated American author, YouTuber, and podcaster known for award-winning young adult novels like The Fault in Our Stars and Looking for Alaska, praised for exploring complex themes with wit and heart, and for his popular YouTube channel Vlogbrothers and educational series Crash Course with his brother Hank. He's recognized for creating relatable characters facing difficult life issues, a successful #1 New York Times bestseller, and for building a large online community through engaging content and charitable work.",
     description: "A clever coming-of-age mystery where Quentin Jacobsen searches for the enigmatic Margo Roth Spiegelman after she disappears, decoding clues that lead him (and friends) on a transformative adventure.",
     image: "https://i.pinimg.com/736x/03/11/19/0311194a9a8c9ebf76ae22e5cfa0888c.jpg",
     price: 499,
@@ -79,6 +93,8 @@ const sampleBooks = [
  {
     title: "Ikigai: The Japanese Secret to a Long and Happy Life",
     author: "Héctor García & Francesc Miralles",
+     authorImage: "https://i.pinimg.com/736x/f9/32/07/f932076777905b70beb9ed21ab626589.jpg",
+    authorBio: "Ikigai was co-authored by Spanish authors Héctor García and Francesc Miralles, who explored the Japanese concept of finding purpose and longevity by interviewing centenarians in Okinawa. García, a former software engineer living in Japan, focuses on Japanese culture, while Miralles, an award-winning author, specializes in health and spirituality, combining their expertise to create the global bestseller. ",
     description: "A bestselling self-help book that explores the Japanese concept of ikigai — a reason for living — and offers insights into living a purposeful, joyful, and balanced life.",
     image: "https://i.pinimg.com/1200x/e3/26/b9/e326b92ced0cac7932bf9cc3b6f31259.jpg",
     price: 550,
@@ -90,6 +106,8 @@ const sampleBooks = [
  {
   title: "Turtles All the Way Down",
   author: "John Green",
+  authorImage: "https://i.pinimg.com/1200x/e4/e0/5a/e4e05ac24c0d06d1dcd607e1e00aba3f.jpg",
+  authorBio: "John Green is a celebrated American author, YouTuber, and podcaster known for award-winning young adult novels like The Fault in Our Stars and Looking for Alaska, praised for exploring complex themes with wit and heart, and for his popular YouTube channel Vlogbrothers and educational series Crash Course with his brother Hank. He's recognized for creating relatable characters facing difficult life issues, a successful #1 New York Times bestseller, and for building a large online community through engaging content and charitable work.",
   description: "A moving contemporary novel about a young woman navigating friendship, mental illness, and the mystery of a missing billionaire while confronting her own anxieties.",
   image: "https://i.pinimg.com/736x/75/53/9a/75539a6732152fad072c51069bac4285.jpg",
   price: 499,
@@ -101,6 +119,8 @@ const sampleBooks = [
 {
   title: "I Want to Eat Your Pancreas",
   author: "Yoru Sumino",
+  authorImage: "https://images.mubicdn.net/images/cast_member/649232/cache-693446-1625551175/image-w856.jpg?",
+  authorBio: "Yoru Sumino is a critically acclaimed Japanese novelist known for poignant, emotional coming-of-age stories like I Want to Eat Your Pancreas, which explores themes of mortality, friendship, and finding meaning in life through bittersweet narratives, often featuring young protagonists and adapted into popular manga, anime, and films. They began writing in high school, achieving massive success with their debut novel, and are recognized for emotionally resonant, character-driven fiction.",
   description: "A tender Japanese novel about a reserved high school boy whose life changes when he meets a cheerful classmate battling a terminal illness, leading to an unforgettable friendship.",
   image: "https://i.pinimg.com/1200x/ad/74/ff/ad74ffd0e0b2e4115edfe88e08421c92.jpg",
   price: 349,
@@ -112,6 +132,8 @@ const sampleBooks = [
 {
   title: "The Power of Your Subconscious Mind",
   author: "Joseph Murphy",
+  authorImage: "https://i.pinimg.com/736x/1d/49/a2/1d49a2117f8d692c8d8309fa6c1fe353.jpg",
+  authorBio: "Joseph Murphy (1898-1981) was a prolific Irish-American New Thought minister, writer, and lecturer, famous for popularizing the mind-body connection and the power of the subconscious, especially in his bestseller The Power of Your Subconscious Mind. He taught that by consciously affirming positive thoughts and beliefs, one could reprogram their subconscious mind to achieve success, happiness, and health, influencing generations of self-help authors. ",
   description: "A classic self-help book exploring how to unlock the power of your subconscious to improve health, success, and happiness through positive thinking and mental programming.",
   image: "https://i.pinimg.com/736x/d0/65/e9/d065e9208c2df88505e2004d375dab1c.jpg",
   price: 399,
@@ -123,6 +145,8 @@ const sampleBooks = [
 {
   title: "November 9",
   author: "Colleen Hoover",
+  authorImage: "https://i.pinimg.com/1200x/41/97/77/419777c1940bb91693d943bc8089e479.jpg",
+  authorBio: "Colleen Hoover is a #1 New York Times bestselling American author known for popular contemporary romance and young adult novels, famous for self-publishing hits like It Ends with Us and Verity, achieving massive success via social media (especially #BookTok), and earning a spot on Time's 100 Most Influential People list in 2023, all while living in Texas with her family.",
   description: "A powerful contemporary romance about a chance meeting that leads to a yearly connection on the same date, exploring love, fate, and personal growth.",
   image: "https://i.pinimg.com/736x/83/11/01/83110146e860ecc1aa011e6caaa8661f.jpg",
   price: 499,
@@ -134,6 +158,8 @@ const sampleBooks = [
 {
   title: "Verity",
   author: "Colleen Hoover",
+  authorImage: "https://i.pinimg.com/1200x/41/97/77/419777c1940bb91693d943bc8089e479.jpg",
+  authorBio: "Colleen Hoover is a #1 New York Times bestselling American author known for popular contemporary romance and young adult novels, famous for self-publishing hits like It Ends with Us and Verity, achieving massive success via social media (especially #BookTok), and earning a spot on Time's 100 Most Influential People list in 2023, all while living in Texas with her family.",
   description: "A chilling romantic thriller about a struggling writer who uncovers disturbing truths while completing another author’s manuscript, blurring lines between fiction and reality.",
   image: "https://i.pinimg.com/736x/48/24/16/4824167e6495f00dca15b47e3c76200b.jpg",
   price: 549,
@@ -145,6 +171,8 @@ const sampleBooks = [
 {
     title: "Gothikana",
     author: "RunyX",
+    authorImage: "https://i.pinimg.com/736x/0f/68/94/0f6894e539589a50809e45833c8bb6c4.jpg",
+    authorBio: "RuNyx is a New York Times bestselling author known for dark, immersive romance novels, often blending contemporary, gothic, historical, and fantasy elements, with popular series like the Dark Verse and standalone books like Gothikana. Her writing creates intense worlds with forbidden love, dangerous characters (mafia, assassins), and deep emotional connections, appealing to readers of romantic suspense and dark academia.",
     description: "A gothic dark romance set in a mysterious academy where students vanish and secrets of the castle unfold with danger, love, and suspense.",
     image: "https://i.pinimg.com/736x/d4/85/63/d4856324f29c5f9eae4b69b4e38ce9cd.jpg",
     price: 399,
@@ -156,6 +184,8 @@ const sampleBooks = [
   {
     title: "One of Us Is Next",
     author: "Karen M. McManus",
+    authorImage: "https://i.pinimg.com/1200x/64/aa/da/64aada2f61d62c2be6216080507b6e62.jpg",
+    authorBio: "Karen M. McManus is a #1 New York Times bestselling American author known for gripping young adult (YA) mystery and thriller novels, often called the queen of the genre, famous for her breakout hit One of Us Is Lying, its sequels, and standalone books like The Cousins, all featuring intricate plots, distinctive characters, and themes inspired by films like The Breakfast Club and Ferris Bueller's Day Off.",
     description: "A mystery thriller where Bayview High students face deadly consequences in a game of truth or dare, following the original One of Us Is Lying story. :contentReference[oaicite:0]{index=0}",
     image: "https://i.pinimg.com/736x/e7/bb/44/e7bb445f905346195b6e8224cf85e317.jpg",
     price: 450,
@@ -167,6 +197,8 @@ const sampleBooks = [
   {
   title: "The Cousins",
   author: "Karen M. McManus",
+  authorImage: "https://i.pinimg.com/1200x/64/aa/da/64aada2f61d62c2be6216080507b6e62.jpg",
+  authorBio: "Karen M. McManus is a #1 New York Times bestselling American author known for gripping young adult (YA) mystery and thriller novels, often called the queen of the genre, famous for her breakout hit One of Us Is Lying, its sequels, and standalone books like The Cousins, all featuring intricate plots, distinctive characters, and themes inspired by films like The Breakfast Club and Ferris Bueller's Day Off.",
   description: "Three estranged cousins are summoned to spend the summer at their wealthy grandmother’s island resort, where family secrets, betrayals, and dark mysteries begin to unravel as they search for the truth about their past.",
   image: "https://i.pinimg.com/736x/aa/ba/53/aaba531753f7846170eca3bedbca6c4b.jpg",
   price: 450,
@@ -178,6 +210,8 @@ const sampleBooks = [
 {
     title: "A Good Girl's Guide to Murder",
     author: "Holly Jackson",
+    authorImage: "https://i.pinimg.com/1200x/d2/eb/ee/d2ebee44a5bec687d99aac1bf2aa2b3b.jpg",
+    authorBio: "Holly Jackson is a British YA author known for her bestselling mystery thrillers, particularly A Good Girl's Guide to Murder series, praised for being addictive, cleverly plotted, and incorporating true-crime elements with a distinctive voice. She grew up in Buckinghamshire, studied English at the University of Nottingham, and enjoys true crime and video games, often structuring her intricate plots meticulously, sometimes using found-document formats like reports and interviews.",
     description: "A teen true-crime enthusiast investigates a murder-suicide, uncovering hidden truths and putting herself in danger. :contentReference[oaicite:1]{index=1}",
     image: "https://i.pinimg.com/736x/31/04/73/310473bfe2a435f89347a01cb1d1bc39.jpg",
     price: 499,
@@ -189,6 +223,8 @@ const sampleBooks = [
   {
     title: "The Fault in Our Stars",
     author: "John Green",
+    authorImage: "https://i.pinimg.com/1200x/e4/e0/5a/e4e05ac24c0d06d1dcd607e1e00aba3f.jpg",
+    authorBio: "John Green is a celebrated American author, YouTuber, and podcaster known for award-winning young adult novels like The Fault in Our Stars and Looking for Alaska, praised for exploring complex themes with wit and heart, and for his popular YouTube channel Vlogbrothers and educational series Crash Course with his brother Hank. He's recognized for creating relatable characters facing difficult life issues, a successful #1 New York Times bestseller, and for building a large online community through engaging content and charitable work.",
     description: "A moving YA romance about two teens with cancer who find love while confronting life, hope and loss. :contentReference[oaicite:4]{index=4}",
     image: "https://i.pinimg.com/1200x/54/50/8b/54508b92f052a417dabf8bdcf2dabbb2.jpg",
     price: 499,
@@ -200,6 +236,8 @@ const sampleBooks = [
   {
   title: "Runaway Girl",
   author: "Emma Tallon",
+  authorImage: "http://emmatallon.com/wp-content/uploads/2023/09/Emma-Tallon-2023-09-19-300x300.jpg",
+  authorBio: "Emma Tallon is a British author of gripping, gritty, organised crime thrillers. Having worked as a freelance ghostwriter for several years, Emma decided to take the professional leap after the birth of her son and finished the first full novel of her own. After months of rejection from publishers and agents alike, in December 2017 Emma signed a publishing contract with Bookouture for the first three books in the Tyler Family series. She has since gone on to sign several more contracts with Bookouture and has become an established name within her genre.",
   description: "Anna Davis has spent years terrified of her sadistic gangster boyfriend and finally runs away in the dead of night. As she begins a new life in London, she meets new friends and danger follows her, leading to a gripping crime thriller full of twists, betrayals, and survival against all odds.", 
   image: "https://i.pinimg.com/736x/f8/43/ee/f843ee319b9e07c17c064dafd3b81a00.jpg",
   price: 499,
@@ -211,6 +249,8 @@ const sampleBooks = [
 {
   title: "Dear John",
   author: "Nicholas Sparks",
+  authorImage: "https://i.pinimg.com/1200x/e4/e0/5a/e4e05ac24c0d06d1dcd607e1e00aba3f.jpg",
+  authorBio: "John Green is a celebrated American author, YouTuber, and podcaster known for award-winning young adult novels like The Fault in Our Stars and Looking for Alaska, praised for exploring complex themes with wit and heart, and for his popular YouTube channel Vlogbrothers and educational series Crash Course with his brother Hank. He's recognized for creating relatable characters facing difficult life issues, a successful #1 New York Times bestseller, and for building a large online community through engaging content and charitable work.",
   description: "A poignant romance about a young soldier, John Tyree, who falls in love with college student Savannah Curtis during a brief leave. Their deep connection faces the strains of long‑distance and duty when John reenlists after 9/11, leading to heartbreaking choices, sacrifice, and the enduring power of love and memory. :contentReference[oaicite:0]{index=0}",
   image: "https://i.pinimg.com/736x/5b/ca/17/5bca17ed12fdf382f1d57d99dbf91fbc.jpg",
   price: 499,
@@ -222,6 +262,8 @@ const sampleBooks = [
 {
   title: "Reminders of Him",
   author: "Colleen Hoover",
+  authorImage: "https://i.pinimg.com/1200x/41/97/77/419777c1940bb91693d943bc8089e479.jpg",
+  authorBio: "Colleen Hoover is a #1 New York Times bestselling American author known for popular contemporary romance and young adult novels, famous for self-publishing hits like It Ends with Us and Verity, achieving massive success via social media (especially #BookTok), and earning a spot on Time's 100 Most Influential People list in 2023, all while living in Texas with her family.",
   description: "After serving five years in prison for a tragic mistake, Kenna Rowan returns home hoping to reunite with her young daughter, but faces judgment, resentment, and closed doors. As she works to rebuild her life and earn forgiveness, she forms a fragile connection with Ledger Ward, a local bar owner who becomes her unexpected ally in healing and love.",  
   image: "https://i.pinimg.com/736x/30/e6/f8/30e6f8aeb37980b6cf86c6a621d29bf2.jpg",
   price: 499,
@@ -233,6 +275,8 @@ const sampleBooks = [
 {
     title: "Good Girl, Bad Blood",
     author: "Holly Jackson",
+    authorImage: "https://i.pinimg.com/1200x/d2/eb/ee/d2ebee44a5bec687d99aac1bf2aa2b3b.jpg",
+    authorBio: "Holly Jackson is a British YA author known for her bestselling mystery thrillers, particularly A Good Girl's Guide to Murder series, praised for being addictive, cleverly plotted, and incorporating true-crime elements with a distinctive voice. She grew up in Buckinghamshire, studied English at the University of Nottingham, and enjoys true crime and video games, often structuring her intricate plots meticulously, sometimes using found-document formats like reports and interviews.",
     description: "The sequel to A Good Girl's Guide to Murder with Pip solving a new disappearance while facing dark secrets. :contentReference[oaicite:2]{index=2}",
     image: "https://i.pinimg.com/736x/b7/ee/50/b7ee507f9e9aa28a704928a05990cacc.jpg",
     price: 499,
@@ -244,6 +288,8 @@ const sampleBooks = [
   {
   title: "The Mindfuck Series",
   author: "S.T. Abby",
+  authorImage: "https://www.babelio.com/users/AVT_ST-Abby_7234.jpg",
+  authorBio: "S.T. Abby (real name Christie Owens) was a popular American author known for dark romance and psychological thrillers, especially her bestselling Mindfck* series, celebrated for its suspenseful plots, complex characters, and fast-paced storytelling, though she tragically passed away in 2021. She also wrote under pen names C.M. Owens and Kristy Cunning, leaving behind a legacy in the romance community with her intense narratives.",
   description: "A dark, intense psychological thriller and dark romance saga about trauma, revenge, and twisted love. Lana Myers, shaped by a horrific past, becomes a lethal force seeking justice while an FBI profiler drawn to her faces difficult choices as their dangerous attraction blurs lines between love and vengeance. The story weaves suspenseful crime, emotional conflict, and chilling twists throughout the series.",  
   image: "https://i.pinimg.com/1200x/f4/25/a0/f425a0a70b0a77d8803788d441fedee2.jpg",
   price: 285,
@@ -255,6 +301,8 @@ const sampleBooks = [
 {
   title: "A Court of Thorns and Roses",
   author: "Sarah J. Maas",
+  authorImage: "https://static01.nyt.com/images/2022/08/04/books/review/04insidethelist/04insidethelist-mediumSquareAt3X.jpg",
+  authorBio: "Sarah J. Maas is a #1 New York Times and internationally bestselling American author known for her popular romantasy novels, which blend elements of romance and fantasy. She has sold more than 75 million copies of her books worldwide, which have been translated into 40 languages.",
   description: "Feyre Archeron, a teenage huntress, kills what she believes is a wolf in the woods and is dragged into the faerie lands of Prythian as punishment. There, she learns that her captor is a powerful faerie lord and discovers a dangerous world of magic, passion, and looming curses that she must confront to save both her own life and the world she’s come to care for.",
   image: "https://i.pinimg.com/1200x/ee/06/da/ee06da4b1bb681c5b9e9bc03b0d9f7ae.jpg",
   price: 599,
@@ -266,6 +314,8 @@ const sampleBooks = [
 {
     title: "The Kite Runner",
     author: "Khaled Hosseini",
+    authorImage: "https://i.pinimg.com/1200x/7b/5c/30/7b5c30d6bba6fa5b1a7a4e2ac3fc6286.jpg",
+    authorBio: "Khaled Hosseini is a renowned Afghan-American novelist, former physician, and UNHCR Goodwill Ambassador, famous for bestselling books like The Kite Runner, A Thousand Splendid Suns, and And the Mountains Echoed, which often explore Afghan life, culture, and the impact of conflict, drawing from his own experiences growing up in Kabul before his family sought asylum in the U.S. in 1980. He founded The Khaled Hosseini Foundation to provide humanitarian aid to his homeland.",
     description: "A powerful story of friendship and redemption set against Afghan history and upheaval.",
     image: "https://i.pinimg.com/1200x/84/da/f9/84daf9f004c6e83ad05d5fa96ac68d03.jpg",
     price: 599,
@@ -277,6 +327,8 @@ const sampleBooks = [
    {
     title: "Twisted Love",
     author: "Ana Huang",
+    authorImage: "https://i.pinimg.com/736x/8a/f5/75/8af575926cd462281e58589821ddf6c9.jpg",
+    authorBio: "Ana Huang is a #1 New York Times bestselling author known for steamy contemporary and New Adult romance novels, famous for her Twisted series featuring strong heroines, alpha heroes, and emotional depth, often incorporating travel and themes of found family, gaining significant traction through online platforms like Wattpad before becoming a full-time writer. Born to Chinese expats in the US, she started writing to improve her English, eventually publishing her popular books, which have been translated into numerous languages.",
     description: "A passionate contemporary romance where Ava Chen and her brother’s enigmatic best friend Alex Volkov go from mutual disdain to an intense, complicated connection that defies all their expectations.",
     image: "https://i.pinimg.com/1200x/dd/4f/b2/dd4fb256f289918399a59c6c6b0c144f.jpg",
     price: 399,
@@ -288,6 +340,8 @@ const sampleBooks = [
   {
     title: "The Duff",
     author: "Kody Keplinger",
+    authorImage: "https://www.shutterstock.com/editorial/image-editorial/N6DaQd1cO2TbA2y8MTI2NQ==/kody-keplinger-440nw-4431732bc.jpg",
+    authorBio: "Kody Keplinger is an American author of popular young adult (YA) and middle-grade books, known for her breakout debut novel, The DUFF (Designated Ugly Fat Friend), written at age 17 and later adapted into a film, focusing on themes of identity, friendship, and disability, a topic she advocates for due to her own visual impairment (Leber congenital amaurosis). She's written several other YA novels, middle-grade books, and a graphic novel (Poison Ivy: Thorns), teaches writing, and is a member of the LGBTQIA+ community, often featuring diverse characters.",
     description: "A witty YA romance about a teen confronting labels, self-worth, and unexpected love.",
     image: "https://i.pinimg.com/736x/34/9c/10/349c10d63496ca71ede90fa2b1fffc1c.jpg",
     price: 399,
@@ -299,6 +353,8 @@ const sampleBooks = [
   {
   title: "Unhooked & Unbooked",
   author: "Dr. Aditya R. Nighhot",
+  authorImage: "https://lw-sgp-prod.sgp1.cdn.digitaloceanspaces.com/author/medium/4911655548209.jpg",
+  authorBio: "Aditya Nighot is an Indian author and doctor known for young adult fiction like U N Me: It's Complicated!!! and Until Love Sets Us Apart, often focusing on college life, romance, and social issues, though he also writes historical fiction in Marathi, such as Shivarayancha Chhava. A medical student from Pune when he started, he gained popularity for his relatable storytelling about youth, friendship, and love. ",
   description: "A contemporary romance about four individuals with vastly different lives — a superstar singer, a struggling model, a social media influencer, and a devoted friend — whose paths collide and change forever as they navigate love, ego, heartbreak and self‑discovery in the modern world.",
   image: "https://m.media-amazon.com/images/I/61yyhegrEdL._SL1500_.jpg",
   price: 249,
@@ -310,6 +366,8 @@ const sampleBooks = [
 {
     title: "As Good as Dead",
     author: "Holly Jackson",
+    authorImage: "https://i.pinimg.com/1200x/d2/eb/ee/d2ebee44a5bec687d99aac1bf2aa2b3b.jpg",
+    authorBio: "Holly Jackson is a British YA author known for her bestselling mystery thrillers, particularly A Good Girl's Guide to Murder series, praised for being addictive, cleverly plotted, and incorporating true-crime elements with a distinctive voice. She grew up in Buckinghamshire, studied English at the University of Nottingham, and enjoys true crime and video games, often structuring her intricate plots meticulously, sometimes using found-document formats like reports and interviews.",
     description: "The third in the AGGGTM series where Pip faces a stalker and must uncover the truth before it’s too late. :contentReference[oaicite:3]{index=3}",
     image: "https://i.pinimg.com/736x/a3/80/d3/a380d39eed04fff0032547805ad4e37f.jpg",
     price: 499,
@@ -321,6 +379,8 @@ const sampleBooks = [
   {
     title: "An Abundance of Katherines",
     author: "John Green",
+    authorImage: "https://i.pinimg.com/1200x/e4/e0/5a/e4e05ac24c0d06d1dcd607e1e00aba3f.jpg",
+    authorBio: "John Green is a celebrated American author, YouTuber, and podcaster known for award-winning young adult novels like The Fault in Our Stars and Looking for Alaska, praised for exploring complex themes with wit and heart, and for his popular YouTube channel Vlogbrothers and educational series Crash Course with his brother Hank. He's recognized for creating relatable characters facing difficult life issues, a successful #1 New York Times bestseller, and for building a large online community through engaging content and charitable work.",
     description: "A hilarious YA tale following a prodigy who’s been dumped nineteen times — all by girls named Katherine — on a road trip of self-discovery. :contentReference[oaicite:6]{index=6}",
     image: "https://i.pinimg.com/736x/94/64/5f/94645fac1f200ae496774e4d449c27a4.jpg",
     price: 450,
@@ -332,6 +392,8 @@ const sampleBooks = [
   {
     title: "Twisted Games",
     author: "Ana Huang",
+    authorImage: "https://i.pinimg.com/736x/8a/f5/75/8af575926cd462281e58589821ddf6c9.jpg",
+    authorBio: "Ana Huang is a #1 New York Times bestselling author known for steamy contemporary and New Adult romance novels, famous for her Twisted series featuring strong heroines, alpha heroes, and emotional depth, often incorporating travel and themes of found family, gaining significant traction through online platforms like Wattpad before becoming a full-time writer. Born to Chinese expats in the US, she started writing to improve her English, eventually publishing her popular books, which have been translated into numerous languages.",
     description: "A slow‑burn romance between Bridget von Ascheberg, a reluctant royal, and her determined bodyguard Rhys, whose protectiveness and emotional walls slowly give way to deeper feelings.",
     image: "https://i.pinimg.com/736x/30/e2/bc/30e2bc0e4cb59bf8c4b9255d247f7faf.jpg",
     price: 399,
@@ -343,6 +405,8 @@ const sampleBooks = [
   {
     title: "Twisted Hate",
     author: "Ana Huang",
+    authorImage: "https://i.pinimg.com/736x/8a/f5/75/8af575926cd462281e58589821ddf6c9.jpg",
+    authorBio: "Ana Huang is a #1 New York Times bestselling author known for steamy contemporary and New Adult romance novels, famous for her Twisted series featuring strong heroines, alpha heroes, and emotional depth, often incorporating travel and themes of found family, gaining significant traction through online platforms like Wattpad before becoming a full-time writer. Born to Chinese expats in the US, she started writing to improve her English, eventually publishing her popular books, which have been translated into numerous languages.",
     description: "An enemies‑to‑lovers narrative where sharp‑tongued Jules Ambrose and charming doctor Josh Chen find their fiery rivalry evolving into unexpected attraction and longing.",
     image: "https://i.pinimg.com/736x/9f/ad/40/9fad40b5668374c4eaf68ef9e9b429ba.jpg",
     price: 399,
