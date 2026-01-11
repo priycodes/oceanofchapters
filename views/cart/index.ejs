@@ -1,38 +1,51 @@
 <% layout("/layouts/boilerplate") -%>
-<body>
-    <h2>Your Cart</h2>
-    <% if (!cart || cart.items.length === 0) { %>
-    <p>Your cart is empty</p>
-    <% } else { %>
-        <ul>
-            <% cart.items.forEach(item => { %>
-                <li>
-                    <%= item.book.title %>
-                    - &#8377;<%= new Intl.NumberFormat("en-IN").format(item.book.price) %>   
-                    (Qty: <%= item.quantity %>)
 
-                    <form action="/cart/increase/<%= item.book._id %>" method="POST" style="display:inline;">
-                        <button>+</button>
-                    </form>
-                    <form action="/cart/decrease/<%= item.book._id %>" method="POST" style="display:inline;">
-                        <button>-</button>
-                    </form>
-                    <form action="/cart/remove/<%= item.book._id %>" method="POST" style="display:inline;">
-                        <button>Remove</button>
-                    </form>
+<div class="container mt-5">
+    <h2 class="mb-4">🛒 Your Cart</h2>
+    <% if (!cart || cart.items.length === 0) { %>
+        <div class="alert alert-info text-center">
+            <h5>Your cart is empty</h5>
+            <a href="/books" class="btn btn-primary mt-2">Buy Books</a>
+        </div>
+    <% } else { %>
+        <ul class="list-group mb-4">
+            <% cart.items.forEach(item => { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="mb-1"><%= item.book.title %></h6>
+                        <small class="text-muted">
+                            ₹<%= new Intl.NumberFormat("en-IN").format(item.book.price) %>
+                        </small>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <form action="/cart/decrease/<%= item.book._id %>" method="POST">
+                            <button class="btn btn-outline-secondary btn-sm" <%= item.quantity === 1 ? "disabled" : "" %>>-</button>
+                        </form>
+                        <span class="fw-bold"><%= item.quantity %></span>
+                        <form action="/cart/increase/<%= item.book._id %>" method="POST">
+                            <button class="btn btn-outline-secondary btn-sm">+</button>
+                        </form>
+                        <form action="/cart/remove/<%= item.book._id %>" method="POST">
+                            <button class="btn btn-outline-danger btn-sm">Remove</button>
+                        </form>
+                    </div>
                 </li>
-          <% }) %>
+        <% }) %>
         </ul>
         <% 
-          let total = 0;
-          cart.items.forEach(item => {
-          total += item.book.price * item.quantity;
-          });
+        let total = 0;
+        cart.items.forEach(item => {
+            total += item.book.price * item.quantity;
+        }); 
         %>
-        <h3>Total Price: &#8377;<%=  new Intl.NumberFormat("en-IN").format(total) %></h3>
-    <% } %>  
-    <form action="/cart/clear" method="POST">
-        <button type="submit">Clear Cart</button>
-    </form>
-  
-</body>
+        <div class="card p-3 mb-3">
+            <h5>Total: ₹<%= new Intl.NumberFormat("en-IN").format(total) %></h5>
+        </div>
+        <div class="d-flex justify-content-between">
+            <form action="/cart/clear" method="POST">
+                <button class="btn btn-outline-danger">Clear Cart</button>
+            </form>
+            <a href="/checkout" class="btn btn-success">Checkout</a>
+        </div>
+        <% } %>
+</div>

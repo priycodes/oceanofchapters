@@ -63,13 +63,19 @@ app.get("/books/:id", async (req, res) => {
 app.get("/cart", async (req, res) => {
   const cart = req.session.cart;
 
-  // populate books manually
+  const populatedItems = [];
   for (let item of cart.items) {
-    item.book = await Book.findById(item.book);
+    const book = await Book.findById(item.book);
+    if (book) {
+      populatedItems.push({
+        book,
+        quantity: item.quantity
+      });
+    }
   }
-
-  res.render("cart/index", { cart });
+  res.render("cart/index", { cart: { items: populatedItems } });
 });
+
 
 //Add Cart Route
 app.post("/cart/add/:id", async (req, res) => {
@@ -103,7 +109,7 @@ app.post("/cart/increase/:id", async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
-  const item = cart.items.find(i => i.book._id.toString() === bookId);
+  const item = cart.items.find(i => i.book === bookId);
   if (item) item.quantity++;
 
   req.session.cart = cart;
@@ -115,13 +121,14 @@ app.post("/cart/decrease/:id", async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
-  const item = cart.items.find(i => i.book._id.toString() === bookId);
+  const item = cart.items.find(i => i.book === bookId);
   if (item) {
-    item.quantity--;
-    if (item.quantity <= 0) {
-      cart.items = cart.items.filter(i => i.book._id.toString() !== bookId);
-    }
+  item.quantity--;
+  if (item.quantity <= 0) {
+    cart.items = cart.items.filter(i => i.book !== bookId);
   }
+}
+
 
   req.session.cart = cart;
   res.redirect("/cart");
@@ -132,7 +139,7 @@ app.post("/cart/remove/:id", async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
-  cart.items = cart.items.filter(i => i.book._id.toString() !== bookId);
+  cart.items = cart.items.filter(i => i.book !== bookId);
   req.session.cart = cart;
 
   res.redirect("/cart");
