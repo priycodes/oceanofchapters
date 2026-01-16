@@ -7,6 +7,8 @@ const Book = require("./models/book.js");
 const path = require("path");
 const session = require("express-session");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
+const ExpressError = require("./utils/ExpressError.js"); 
 app.use(express.static(path.join(__dirname, "/public")));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
@@ -41,26 +43,25 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.get("/", (req, res) => {
     res.send("Hi, I am root");
 });
 
 //Index Route
-app.get("/books",async(req, res) => {
+app.get("/books", wrapAsync(async(req, res) => {
     const allBooks = await Book.find({});
     res.render("books/index.ejs", {allBooks});
-});
+}));
 
 //Show Route
-app.get("/books/:id", async (req, res) => {
+app.get("/books/:id", wrapAsync(async (req, res) => {
     let {id} = req.params;
     const book = await Book.findById(id);
     res.render("books/show.ejs", { book });
-});
+}));
 
 //Cart Route
-app.get("/cart", async (req, res) => {
+app.get("/cart", wrapAsync(async (req, res) => {
   const cart = req.session.cart;
 
   const populatedItems = [];
@@ -74,11 +75,11 @@ app.get("/cart", async (req, res) => {
     }
   }
   res.render("cart/index", { cart: { items: populatedItems } });
-});
+}));
 
 
 //Add Cart Route
-app.post("/cart/add/:id", async (req, res) => {
+app.post("/cart/add/:id", wrapAsync(async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
@@ -94,7 +95,7 @@ app.post("/cart/add/:id", async (req, res) => {
 
   req.session.cart = cart;
   res.redirect("/books");
-});
+}));
 
 
 //Clear Cart
@@ -103,9 +104,8 @@ app.post("/cart/clear", (req, res) => {
   res.redirect("/cart");
 });
 
-
 //increase quantity
-app.post("/cart/increase/:id", async (req, res) => {
+app.post("/cart/increase/:id", wrapAsync(async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
@@ -114,10 +114,10 @@ app.post("/cart/increase/:id", async (req, res) => {
 
   req.session.cart = cart;
   res.redirect("/cart");
-});
+}));
 
 // decrease quantity
-app.post("/cart/decrease/:id", async (req, res) => {
+app.post("/cart/decrease/:id", wrapAsync(async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
@@ -129,13 +129,12 @@ app.post("/cart/decrease/:id", async (req, res) => {
   }
 }
 
-
   req.session.cart = cart;
   res.redirect("/cart");
-});
+}));
 
 // remove item
-app.post("/cart/remove/:id", async (req, res) => {
+app.post("/cart/remove/:id", wrapAsync(async (req, res) => {
   const bookId = req.params.id;
   const cart = req.session.cart;
 
@@ -143,23 +142,15 @@ app.post("/cart/remove/:id", async (req, res) => {
   req.session.cart = cart;
 
   res.redirect("/cart");
+}));
+
+app.use((req, res, next) => {
+  next(new ExpressError(404, "Page Not Found!"));
 });
 
-
-app.get("/testBook", async(req, res) => {
-    let sampleBook = new Book({
-        title: "It Ends With Us",
-        author: "Colleen Hoover",
-        description: "It Ends with Us follows Lily Bloom...",
-        price: 499,
-        releasedate: new Date("2016-08-02"),
-        country: "USA",
-        genre: ["Fiction", "Romance"],
-        pages: 376,
-    });
-    await sampleBook.save();
-    console.log("sample was saved");
-    res.send("successful testing");
+app.use((err, req, res, next) => {
+  let {statusCode, message} = err;
+  res.status(statusCode).send(message);
 });
 
 app.listen(8080, () => {

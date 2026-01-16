@@ -24,11 +24,17 @@ const bookSchema = new Schema({
             ? "https://i.pinimg.com/736x/2b/67/60/2b6760353435b8ef1a3437385a381039.jpg"
             : v,
         },
-        price: Number,
-        releasedate: Date,
-        country: String,
-        genre: [String],
-        pages: Number, 
+    price: Number,
+    releasedate: Date,
+    country: String,
+    genre: [String],
+    pages: Number, 
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Review",
+        },
+    ],
 });
 
 const Book = mongoose.model("Book", bookSchema);
