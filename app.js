@@ -10,6 +10,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js"); 
 app.use(express.static(path.join(__dirname, "/public")));
+const Review = require("./models/review.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
 
@@ -56,7 +57,7 @@ app.get("/books", wrapAsync(async(req, res) => {
 //Show Route
 app.get("/books/:id", wrapAsync(async (req, res) => {
     let {id} = req.params;
-    const book = await Book.findById(id);
+    const book = await Book.findById(id).populate("reviews");
     res.render("books/show.ejs", { book });
 }));
 
@@ -144,12 +145,26 @@ app.post("/cart/remove/:id", wrapAsync(async (req, res) => {
   res.redirect("/cart");
 }));
 
+//Reviews
+//Post Route
+app.post("/books/:id/reviews", async(req, res) => {
+  let book = await Book.findById(req.params.id);
+  let newReview = new Review(req.body.review);
+
+  book.reviews.push(newReview);
+
+  await newReview.save();
+  await book.save();
+
+  res.redirect(`/books/${book._id}`);
+});
+
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
 
 app.use((err, req, res, next) => {
-  let {statusCode, message} = err;
+  let {statusCode=500, message="Something went wrong!"} = err;
   res.status(statusCode).send(message);
 });
 

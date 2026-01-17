@@ -30,11 +30,11 @@ const bookSchema = new Schema({
     genre: [String],
     pages: Number, 
     reviews: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Review",
-        },
-    ],
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review"
+    }
+  ]
 });
 
 const Book = mongoose.model("Book", bookSchema);
