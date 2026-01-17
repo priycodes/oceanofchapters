@@ -11,6 +11,7 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js"); 
 app.use(express.static(path.join(__dirname, "/public")));
 const Review = require("./models/review.js");
+const methodOverride = require("method-override");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/oceanofchapters";
 
@@ -30,6 +31,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 app.engine("ejs", ejsMate);
+app.use(methodOverride("_method"));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -158,6 +160,18 @@ app.post("/books/:id/reviews", async(req, res) => {
 
   res.redirect(`/books/${book._id}`);
 });
+
+// Delete Review Route
+app.delete("/books/:id/reviews/:reviewId",
+  wrapAsync(async(req, res) => {
+    let {id, reviewId} = req.params;
+
+    await Book.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+    await Review.findByIdAndDelete(reviewId);
+
+    res.redirect(`/books/${id}`);
+  })
+);
 
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
